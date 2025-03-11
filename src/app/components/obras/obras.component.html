@@ -1,0 +1,22 @@
+
+<div *ngIf="obras && obras.length > 0" class="container mt-4">
+    <h2 class="mb-4 text-center fw-bold">Obras del día</h2>
+    <div class="row">
+        <div class="col-12 col-md-4" *ngFor="let obra of obras">
+            <div class="card mb-3  d-flex flex-column justify-content-between">
+                <img *ngIf="obra.imageUrl" [src]="obra.imageUrl" class="card-img-top" alt="{{ obra.title }}">                <div class="card-body">
+                    <div class="card-body">
+                    <h5 class="card-title fw-bold fs-3 text-center pb-3" style="color: #34623F;">{{ obra.title }}</h5>
+                    <!-- Información de la obra -->
+
+                    <p class="card-text"><strong>Artista: </strong> {{ obra.artist_display | artistName }}</p>
+                    <!-- <p class="card-text"><strong>Enlace a la obra:</strong> <a [href]="obra.api_link" class="text-deco" target="_blank">Ver detalles</a></p> -->
+                    <!-- <p class="card-text"><strong>Descripción:</strong> {{ obra.thumbnail.alt_text }}</p> -->
+                    <p class="card-text"><strong>Fecha:</strong> {{ obra.date_display | artDate }}</p>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

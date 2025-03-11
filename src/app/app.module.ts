@@ -12,7 +12,10 @@ import { AcercadeComponent } from './components/acercade/acercade.component';
 import { Error404Component } from './components/error404/error404.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { ArtistNamePipe } from './pipes/artist-name.pipe';
-import { ImagesArrayPipe } from './pipes/images-array.pipe';
+import { ImagenDisponiblePipe } from './pipes/imagen-disponible.pipe';
+import { RouterModule } from '@angular/router';
+import { ObrasComponent } from './components/obras/obras.component';
+import { ArtDatePipe } from './pipes/art-date.pipe';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,16 @@ import { ImagesArrayPipe } from './pipes/images-array.pipe';
     Error404Component,
     BusquedaComponent,
     ArtistNamePipe,
-    ImagesArrayPipe
+    ImagenDisponiblePipe,
+    ObrasComponent,
+    ArtDatePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserModule,
+    RouterModule.forRoot([]),
     //HttpClientModule
   ],
   providers: [provideHttpClient()],

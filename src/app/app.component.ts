@@ -9,7 +9,7 @@ import { ArtworksService } from './services/artworks.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
-  title = 'arte-angular';
+  title = 'Arte angular';
 
   //articulos:any;
   // articulos!:Iarticulo[];

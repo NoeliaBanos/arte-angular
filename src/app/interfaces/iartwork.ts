@@ -8,6 +8,7 @@ export interface Iartwork {
     classification_titles: string[];
     style_ids: string[];
     image_id: string;
+    imageUrl: string;
     is_public_domain: boolean;
     [key: string]: any;
 }
