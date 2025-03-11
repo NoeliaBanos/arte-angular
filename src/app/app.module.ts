@@ -11,6 +11,7 @@ import { BienvenidaComponent } from './components/bienvenida/bienvenida.componen
 import { AcercadeComponent } from './components/acercade/acercade.component';
 import { Error404Component } from './components/error404/error404.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
+import { ArtistNamePipe } from './pipes/artist-name.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
     BienvenidaComponent,
     AcercadeComponent,
     Error404Component,
-    BusquedaComponent
+    BusquedaComponent,
+    ArtistNamePipe
   ],
   imports: [
     BrowserModule,

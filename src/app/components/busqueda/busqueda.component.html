@@ -34,6 +34,8 @@
                     <!-- <p class="card-text"><strong>Enlace a la obra:</strong> <a [href]="obra.api_link" class="text-deco" target="_blank">Ver detalles</a></p> -->
                     <p class="card-text"><strong>Descripción:</strong> {{ obra.thumbnail.alt_text }}</p>
                     <p class="card-text"><strong>ID:</strong> {{ obra.id }}</p>
+                    <p class="card-text"><strong>Artista: </strong> {{ obra.artist_display | artistName }}</p>
+
                 </div>
             </div>
         </div>
