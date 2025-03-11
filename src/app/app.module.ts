@@ -6,13 +6,20 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import {  provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { DetalleComponent } from './components/detalle/detalle.component';
+
+import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
+import { AcercadeComponent } from './components/acercade/acercade.component';
+import { Error404Component } from './components/error404/error404.component';
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    DetalleComponent
+    BienvenidaComponent,
+    AcercadeComponent,
+    Error404Component,
+    BusquedaComponent
   ],
   imports: [
     BrowserModule,

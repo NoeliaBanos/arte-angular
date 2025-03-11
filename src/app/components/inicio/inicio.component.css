@@ -1,0 +1,8 @@
+.hero{
+    background-image: url('https://www.artic.edu/iiif/2/2d484387-2509-5e8e-2c43-22f9981972eb/full/843,/0/default.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+
+  text-shadow: 1px 1px 5px black;
+}
