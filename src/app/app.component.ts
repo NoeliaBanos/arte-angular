@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtworksService } from './services/artworks.service';
-import { Iarticulo } from './interfaces/iarticulo';
+
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   title = 'arte-angular';
 
   //articulos:any;
-  articulos!:Iarticulo[];
+  // articulos!:Iarticulo[];
 
   constructor(private artworksservice:ArtworksService){}
 

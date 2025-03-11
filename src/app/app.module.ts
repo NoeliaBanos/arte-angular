@@ -12,6 +12,7 @@ import { AcercadeComponent } from './components/acercade/acercade.component';
 import { Error404Component } from './components/error404/error404.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { ArtistNamePipe } from './pipes/artist-name.pipe';
+import { ImagesArrayPipe } from './pipes/images-array.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ArtistNamePipe } from './pipes/artist-name.pipe';
     AcercadeComponent,
     Error404Component,
     BusquedaComponent,
-    ArtistNamePipe
+    ArtistNamePipe,
+    ImagesArrayPipe
   ],
   imports: [
     BrowserModule,
