@@ -1,3 +1,41 @@
-<ul>
-  <li *ngFor="let art of articulos">{{art.descripcion}}</li>
-</ul>
+<!-- Navbar -->
+<nav class="navbar fondo-gris pt-4">
+  <div class="container">
+    <a class="nav-link pe-4" routerLink="/inicio">
+    <figure class="figure-img">
+   
+      
+          <img class="img-fluid" src="logo.png" alt="Logo">
+
+        </figure>
+      </a>
+    <div class="d-flex justify-content-between">
+      <a class="nav-link" routerLink="/search">Buscar</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenido dinámico -->
+<main class="py-4">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
+<footer class="text-white py-4 mt-auto" style="background-color: #34623F;">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col mb-3">
+        <h3 class="fw-bold">Enlaces</h3>
+        <a class="nav-link" href="/inicio">Inicio</a>
+        <a class="nav-link" href="#">Link 2</a>
+      </div>
+      <div class="col">
+        <h3 class="fw-bold">¿Qué hace esta API?</h3>
+        <p>Esta API puede tener varias funcionalidades</p>
+      </div>
+    </div>
+    <div class="mt-3 text-center">
+      <p class="mb-0"><i> 2025 API Angular sobre arte.&copy; Todos los derechos reservados.</i></p>
+    </div>
+  </div>
+</footer>

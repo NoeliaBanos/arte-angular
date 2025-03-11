@@ -17,12 +17,14 @@ export class AppComponent implements OnInit{
   constructor(private artworksservice:ArtworksService){}
 
   ngOnInit(): void {
-    this.artworksservice.obtenerArticulos().subscribe(
-      (data) => {
-        this.articulos = data;
-        console.log(this.articulos);
-      }
-    );
+    // this.artworksservice.obtenerArticulos().subscribe(
+    //   (data) => {
+    //     this.articulos = data;
+    //     console.log(this.articulos);
+    //   }
+    // );
+
+    
   }
 
 
