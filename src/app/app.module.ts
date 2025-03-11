@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import {  provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DetalleComponent } from './components/detalle/detalle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent
+    InicioComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,

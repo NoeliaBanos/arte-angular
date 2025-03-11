@@ -26,26 +26,23 @@ export class InicioComponent {
   // }
  
   onSearch() {
-    // Si hay una búsqueda, la usamos, sino, pasamos una cadena vacía.
     const query = this.searchQuery ? this.searchQuery : '';
-    
-    // Usamos el servicio para buscar obras con la consulta y el tipo de búsqueda (si se aplica)
     this.artworksService.searchArtworks(query, this.searchType).subscribe((response: any) => {
-      // Inicializamos el arreglo de obras vacío
-      this.obras = [];
+      // console.log(response); // Verifica la estructura de la respuesta
   
-      // Recorremos las obras obtenidas con `forEach`
-      response.data.forEach((obra: any) => {
-        // Agregamos la URL de la imagen a cada obra usando `imagen_URL`
-        obra.imagen_URL = obra.image_id ? `https://www.artic.edu/iiif/2/${obra.image_id}/full/843,/0/default.jpg` : '';
-        // Agregamos la obra al arreglo
-        this.obras.push(obra);
+      // Extrae el iiif_url de la configuración
+      const iiifUrl = response.config?.iiif_url || 'https://www.artic.edu/iiif/2';
+  
+      // Procesa las obras
+      this.obras = response.data.map((obra: any) => {
+        // console.log(obra); // Verifica la estructura de cada obra
+  
+        // Construye la URL de la imagen usando iiifUrl y image_id
+        obra.imagen_URL = obra.image_id ? `${iiifUrl}/${obra.image_id}/full/843,/0/default.jpg` : 'assets/no-image.jpg';
+        return obra;
       });
   
-      // Asignamos la paginación si está presente en la respuesta
       this.pagination = response.pagination;
-  
-      console.log(this.obras); // Verificar los datos
     }, (error) => {
       console.error('Error fetching artworks:', error);
     });
@@ -53,21 +50,15 @@ export class InicioComponent {
   
 
   onPageChange(page: number) {
-    this.artworksService.getArtworks(1).subscribe(
-      (data) => {
-        this.obras = data; // Asigna los datos al arreglo de obras
-        console.log(this.obras); // Para depurar y ver los datos
-      },
-      (error) => {
-        console.error('Error fetching artworks:', error);
-      }
-    );
-  
-
     if (page > 0 && page <= this.pagination.total_pages) {
       this.artworksService.getArtworks(page).subscribe((response: any) => {
-        this.obras = response.data;
+        this.obras = response.data.map((obra: any) => {
+          obra.imagen_URL = obra.image_id ? `https://www.artic.edu/iiif/2/${obra.image_id}/full/843,/0/default.jpg` : '';
+          return obra;
+        });
         this.pagination = response.pagination;
+      }, (error) => {
+        console.error('Error fetching artworks:', error);
       });
     }
   }
