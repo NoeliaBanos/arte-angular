@@ -14,3 +14,4 @@ Este proyecto es una aplicación web construida con Angular que permite buscar y
 
    ```bash
    git clone https://github.com/tuusuario/tu-repositorio.git
+2. O visualiza el proyecto en este [enlace](https://ruizgijon.ddns.net/banosn/api-arte/inicio).
